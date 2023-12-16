@@ -50,10 +50,37 @@ var swap = function(arr, i, j) {
 // Time complexity is O(n) where n is the number of characters in string
 // Space complexity is O(n) because we created array copy of input string
 
-console.log("Output:", reverseVowelsHashMap(s1));
+console.log("Output Hash Map:", reverseVowelsHashMap(s1));
 console.log("Expected:", output1);
 console.log("================");
 
-console.log("Output:", reverseVowelsHashMap(s2));
+console.log("Output Hash Map:", reverseVowelsHashMap(s2));
+console.log("Expected:", output2);
+console.log("================");
+
+
+var reverseVowels = function(s) {
+    let l = 0, r = s.length -1;
+    let result = s.split('');
+    let vowels = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'])
+
+    while (l < r) {
+        if (!vowels.has(result[l])) l++;
+        else if (!vowels.has(result[r])) r--;
+        else {
+            [result[l], result[r]] = [result[r], result[l]];
+            l++;
+            r--;
+        }
+    }
+
+    return result.join('');
+}
+
+console.log("Output:", reverseVowels(s1));
+console.log("Expected:", output1);
+console.log("================");
+
+console.log("Output:", reverseVowels(s2));
 console.log("Expected:", output2);
 console.log("================");

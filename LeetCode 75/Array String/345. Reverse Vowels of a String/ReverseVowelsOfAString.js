@@ -62,7 +62,7 @@ console.log("================");
 var reverseVowels = function(s) {
     let l = 0, r = s.length -1;
     let result = s.split('');
-    let vowels = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'])
+    let vowels = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']);
 
     while (l < r) {
         if (!vowels.has(result[l])) l++;

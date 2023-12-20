@@ -13,7 +13,35 @@ nums3 = [2,1,5,0,4,6];
 output3 = true;
 
 var increasingTriplet = function(nums) {
-    for (let i = 0; i < nums.length - 2; i++) {
-        
+    // for (let i = 1; i <= nums.length - 2; i++) {
+    //     if (nums[i-1] < nums[i] && nums[i] < nums[i+1]) {
+    //         return true;
+    //     }
+    // }
+    // return false;
+    let first = Infinity;
+    let second = Infinity;
+    for (let third of nums) {
+        console.log("third:", third);
+        if (third < first) {
+            first = third;
+            console.log("first", first);
+        } else if (third < second && third > first) {
+            second = third;
+            console.log("second", second);
+        } else if (third > second && third > first) {
+            return true;
+        }
     }
+    return false;
 }
+
+console.log("Output:", increasingTriplet(nums1));
+console.log("Expected Output:", output1);
+console.log("=================");
+console.log("Output:", increasingTriplet(nums2));
+console.log("Expected Output:", output2);
+console.log("=================");
+console.log("Output:", increasingTriplet(nums3));
+console.log("Expected Output:", output3);
+console.log("=================");

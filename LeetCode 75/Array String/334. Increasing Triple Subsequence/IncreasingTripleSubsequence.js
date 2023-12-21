@@ -13,24 +13,44 @@ nums3 = [2,1,5,0,4,6];
 output3 = true;
 
 var increasingTriplet = function(nums) {
+    // Initial thought process, does not work if there is a number less than j but k is greater than (i.e. [4,3,1,2,1,3])
     // for (let i = 1; i <= nums.length - 2; i++) {
     //     if (nums[i-1] < nums[i] && nums[i] < nums[i+1]) {
     //         return true;
     //     }
     // }
     // return false;
-    let first = Infinity;
-    let second = Infinity;
-    for (let third of nums) {
-        console.log("third:", third);
-        if (third < first) {
-            first = third;
-            console.log("first", first);
-        } else if (third < second && third > first) {
-            second = third;
-            console.log("second", second);
-        } else if (third > second && third > first) {
+
+
+    // let first = Infinity;
+    // let second = Infinity;
+    // for (let third of nums) {
+    //     console.log("third:", third);
+    //     if (third < first) {
+    //         first = third;
+    //         console.log("first", first);
+    //     } else if (third < second && third > first) {
+    //         second = third;
+    //         console.log("second", second);
+    //     } else if (third > second && third > first) {
+    //         return true;
+    //     }
+    // }
+    // return false;
+
+
+    // Another Solution
+    let firstNum = Infinity;
+    let secondNum = Infinity;
+
+    for (let currentNum of nums) {
+        if (currentNum > secondNum) {
             return true;
+        }
+        if (currentNum > firstNum) {
+            secondNum = currentNum;
+        } else {
+            firstNum = currentNum;
         }
     }
     return false;

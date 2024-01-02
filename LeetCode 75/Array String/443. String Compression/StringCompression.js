@@ -10,6 +10,15 @@
 
 // You must write an algorithm that uses only constant extra space.
 
+chars1 = ["a", "a", "b", "b", "c", "c","c"]
+output1 = 6;
+
+chars2 = ["a"]
+output2 = 1;
+
+chars3 = ["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b",];
+output3 = 4;
+
 var compress = function(chars) {
     let i=0, length = 0;
     
@@ -32,3 +41,12 @@ var compress = function(chars) {
     }
     return length;
 }
+
+console.log("Output:", compress(chars1));
+console.log("Expected:", output1);
+
+console.log("Output:", compress(chars2));
+console.log("Expected:", output2);
+
+console.log("Output:", compress(chars3));
+console.log("Expected:", output3);

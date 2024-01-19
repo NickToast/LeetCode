@@ -10,8 +10,11 @@ var largestAltitude = function(gain) {
     let currentAltitude = 0;
     let maxAltitude = 0;
 
+    // Loop through array
     for (let i = 0; i < gain.length; i++) {
+        // Add/subtract altitude gain from current altitude
         currentAltitude += gain[i];
+        // Set max alt to the higher value of current and max altitude 
         maxAltitude = Math.max(maxAltitude, currentAltitude);
     }
 
@@ -23,6 +26,7 @@ var largestAltitude = function(gain) {
         }
     }
     */
+
     return maxAltitude;
 };
 

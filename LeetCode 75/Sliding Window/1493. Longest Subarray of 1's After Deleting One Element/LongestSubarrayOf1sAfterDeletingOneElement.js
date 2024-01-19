@@ -30,15 +30,36 @@ var longestSubarray = function(nums) {
     return maxLength;
 };
 
-console.log("Output:", longestSubarray(nums1));
+
+// Testing a different solution (non sliding window technique)
+var longestSubarray2 = function(nums) {
+    let prev = 0, curr = 0, i = 0;
+    let maxLength = 0;
+    
+    while (i < nums.length) {
+        if (nums[i] == 1) {
+            curr++;
+            i++;
+        }
+        if (nums[i] == 0) {
+            maxLength = Math.max(maxLength, curr+prev);
+            prev = curr;
+            curr = 0;
+            i++;
+        }
+        maxLength = Math.max(maxLength, prev+curr);
+    }
+    return maxLength==nums.length ? maxLength - 1: maxLength; // ternary operator for edge case where there are no 0's in the array, so our answer will just be nums.length - 1
+};
+
+console.log("Output:", longestSubarray2(nums1));
 console.log("Expected:", output1);
 console.log("================");
 
-console.log("Output:", longestSubarray(nums2));
+console.log("Output:", longestSubarray2(nums2));
 console.log("Expected:", output2);
 console.log("================");
 
-console.log("Output:", longestSubarray(nums3));
+console.log("Output:", longestSubarray2(nums3));
 console.log("Expected:", output3);
 console.log("================");
-

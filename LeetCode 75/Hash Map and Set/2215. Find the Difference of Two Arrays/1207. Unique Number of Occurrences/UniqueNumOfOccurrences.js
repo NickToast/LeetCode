@@ -13,19 +13,23 @@ var uniqueOccurrences = function(arr) {
 
     // Loop through array to create map with the frequencies
     for(let num of arr) {
-        // 
+        // Check if map has num yet, if it does, add one to the value
         if (map.has(num)) {
             map.set(num, map.get(num) + 1);
-        } else {
+        } else { // We will add num to the map and set it to 1
             map.set(num, 1);
         }
     }
-    
+
     // Create set by iterating through each value in the map
     for (let freq of map.values()) {
+        // If set has the same the "freq" of the map value, we will return false bc the number of occurrences are no longer unique
         if(set.has(freq)) return false;
+        // If set does not have the freq in it, we will add it to the set
         set.add(freq);
+        // Sets can only store unique elements, it cannot store multiple of the same value/element (does not allow duplicates)
     }
+    // If we loop through the map values, adding them to our set without return false, return true because the number of occurrences are all unique values
     return true;
 }
 

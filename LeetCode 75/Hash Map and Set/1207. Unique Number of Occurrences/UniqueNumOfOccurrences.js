@@ -19,6 +19,7 @@ var uniqueOccurrences = function(arr) {
         } else { // We will add num to the map and set it to 1
             map.set(num, 1);
         }
+        console.log(map);
     }
 
     // Create set by iterating through each value in the map

@@ -9,5 +9,5 @@
 // Given two strings, word1 and word2, return true if word1 and word2 are close, and false otherwise.
 
 var closeString = function(word1, word2) {
-
+    // 
 };

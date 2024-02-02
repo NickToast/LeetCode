@@ -12,7 +12,7 @@ let word1 = "abc", word2 = "bca", word3 = "a", word4 = "aa", word5 = "cabbba", w
 let ans1 = true, ans2 = false, ans3 = true;
 
 var closeString = function(word1, word2) {
-    // 
+    // If the word lengths aren't the same, cannot be true
     if (word1.length !== word2.length) return false;
 
     let arr1 = new Array(26).fill(0);
